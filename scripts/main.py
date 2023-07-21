@@ -86,6 +86,7 @@ def print_assistant_thoughts(assistant_reply):
         assistant_thoughts_plan = None
         assistant_thoughts_speak = None
         assistant_thoughts_criticism = None
+        breakpoint()
         assistant_thoughts = assistant_reply_json.get("thoughts", {})
         assistant_thoughts_text = assistant_thoughts.get("text")
 
@@ -374,6 +375,7 @@ class Agent:
                     cfg.fast_token_limit)  # TODO: This hardcodes the model to use GPT3.5. Make this an argument
 
             # Print Assistant thoughts
+            print(f"assistant_reply: {assistant_reply}")
             print_assistant_thoughts(assistant_reply)
 
             # Get command name and arguments

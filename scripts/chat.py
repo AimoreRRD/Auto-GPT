@@ -1,4 +1,5 @@
 import time
+import os
 import openai
 from dotenv import load_dotenv
 from config import Config
@@ -64,7 +65,8 @@ def chat_with_ai(
             Returns:
             str: The AI's response.
             """
-            model = cfg.fast_llm_model # TODO: Change model from hardcode to argument
+            # model = cfg.fast_llm_model # TODO: Change model from hardcode to argument
+            model = os.environ["FAST_LLM_MODEL"]
             # Reserve 1000 tokens for the response
 
             logger.debug(f"Token limit: {token_limit}")

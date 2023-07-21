@@ -33,6 +33,7 @@ def fix_and_parse_json(
 ) -> Union[str, Dict[Any, Any]]:
     """Fix and parse JSON string"""
     try:
+        print(f"json_str = {type(json_str)}")
         json_str = json_str.replace('\t', '')
         return json.loads(json_str)
     except json.JSONDecodeError as _:  # noqa: F841
